@@ -3,7 +3,6 @@ require 'diego.options'
 require 'diego.keymaps'
 require 'diego.plugins'
 
-
 --Themes
 require 'diego.colorscheme'
 

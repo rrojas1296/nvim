@@ -91,7 +91,7 @@ local mappings = {
   ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = { "<cmd>Telescope find_files hidden=true no_ignore=true theme=dropdown<cr>", "Find Files" },
-  ["F"] = { "<cmd>Telescope live_grep no_ignore=true<cr>", "Find Text" },
+  ["F"] = { "<cmd>Telescope live_grep no_ignore=true hidden=true<cr>", "Find Text" },
 
   p = {
     name = "Packer",
@@ -107,13 +107,9 @@ local mappings = {
     c = { "<cmd>Git commit<cr>", "Make Commit" },
     a = { "<cmd>Git add .<cr>", "Add files" },
     p = { "<cmd>Git push<cr>", "Push Changes" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    o = { "<cmd>Telescope git_status<cr>", "Search changed files" },
+    b = { "<cmd>Telescope git_branches<cr>", "Search Branch" },
+    q = { "<cmd>Telescope git_commits<cr>", "Search Commits" },
     d = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
