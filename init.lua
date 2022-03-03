@@ -27,11 +27,11 @@ require 'diego.nvim-tree'
 --LSP
 require 'diego.lsp'
 
---CMP
-require 'diego.cmp'
-
 --Null-ls
 require 'diego.lsp.null-ls'
+
+--CMP
+require 'diego.cmp'
 
 --Indent
 require 'diego.indent'
