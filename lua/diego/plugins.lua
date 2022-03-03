@@ -52,6 +52,7 @@ return packer.startup(function()
     use 'Rigellute/rigel'
     use {'embark-theme/vim',name='embark'}
     use 'tomasiser/vim-code-dark'
+    use 'ghifarit53/tokyonight-vim'
 
 
     -- Alpha
