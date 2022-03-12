@@ -9,7 +9,8 @@ dashboard.section.buttons.val = {
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles no_ignore=true hidden=true<CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep no_ignore=true hidden=true<CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),}
+	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+}
 
 local function footer()
 	return "drojascam.com"

@@ -59,3 +59,5 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 --Split Window
 keymap("n","<leader>vs",":vsp",opts)
 
+--Clear Find text
+keymap('n','//',':noh<CR>',opts)
