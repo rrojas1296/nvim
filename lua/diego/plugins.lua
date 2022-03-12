@@ -112,6 +112,9 @@ return packer.startup(function()
   -- Null Ls
     use 'jose-elias-alvarez/null-ls.nvim'
 
+  -- Transparent
+    use 'xiyaowong/nvim-transparent'
+
     -- Packer Sync
     if PACKER_BOOTSTRAP then
       require("packer").sync()

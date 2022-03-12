@@ -45,3 +45,5 @@ require 'diego.treeseter'
 --Git
 require 'diego.gitsigns'
 
+--Transparent
+require 'diego.transparent'
