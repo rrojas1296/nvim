@@ -46,13 +46,12 @@ return packer.startup(function()
 	-- Lualine
 	use("nvim-lualine/lualine.nvim")
 
-	-- pluThemes
+	-- Themes
 	use("sainnhe/sonokai")
 	use("Rigellute/rigel")
 	use({ "embark-theme/vim", name = "embark" })
 	use("tomasiser/vim-code-dark")
 	use("ghifarit53/tokyonight-vim")
-	use("tomasiser/vim-code-dark")
 
 	-- Alpha
 	use("goolord/alpha-nvim")
@@ -112,6 +111,9 @@ return packer.startup(function()
 
 	-- Transparent
 	use("xiyaowong/nvim-transparent")
+
+  --Discord-Presence
+  use('andweeb/presence.nvim')
 
 	-- Packer Sync
 	if PACKER_BOOTSTRAP then
