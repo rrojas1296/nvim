@@ -47,3 +47,7 @@ require("diego.gitsigns")
 
 --Transparent
 require("diego.transparent")
+
+--Commet
+require("diego.comment")
+

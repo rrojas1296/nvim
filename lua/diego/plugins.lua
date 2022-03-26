@@ -115,6 +115,10 @@ return packer.startup(function()
   --Discord-Presence
   use('andweeb/presence.nvim')
 
+  --Commenter
+  use('numToStr/Comment.nvim')
+  use('JoosepAlviste/nvim-ts-context-commentstring')
+
 	-- Packer Sync
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
