@@ -49,7 +49,7 @@ local function keymapping(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
+	if client.name == "tsserver" or client.name == "html" or client.name == "jsonls" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	keymapping(bufnr)

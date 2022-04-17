@@ -52,6 +52,7 @@ return packer.startup(function()
 	use({ "embark-theme/vim", name = "embark" })
 	use("tomasiser/vim-code-dark")
 	use("ghifarit53/tokyonight-vim")
+  use("bluz71/vim-moonfly-colors")
 
 	-- Alpha
 	use("goolord/alpha-nvim")
