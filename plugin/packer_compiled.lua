@@ -209,11 +209,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["presence.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\presence.nvim",
-    url = "https://github.com/andweeb/presence.nvim"
-  },
   rigel = {
     loaded = true,
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rigel",
@@ -243,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
+  },
+  ["vim-electron"] = {
+    loaded = true,
+    path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-electron",
+    url = "https://github.com/ivanlhz/vim-electron"
   },
   ["vim-fugitive"] = {
     loaded = true,

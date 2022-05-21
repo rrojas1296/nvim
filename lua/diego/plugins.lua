@@ -53,6 +53,7 @@ return packer.startup(function()
 	use("tomasiser/vim-code-dark")
 	use("ghifarit53/tokyonight-vim")
   use("bluz71/vim-moonfly-colors")
+  use('ivanlhz/vim-electron')
 
 	-- Alpha
 	use("goolord/alpha-nvim")
@@ -112,9 +113,6 @@ return packer.startup(function()
 
 	-- Transparent
 	use("xiyaowong/nvim-transparent")
-
-  --Discord-Presence
-  use('andweeb/presence.nvim')
 
   --Commenter
   use('numToStr/Comment.nvim')
