@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/diego/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  NeoSolarized = {
+    loaded = true,
+    path = "/home/diego/.local/share/nvim/site/pack/packer/start/NeoSolarized",
+    url = "https://github.com/overcache/NeoSolarized"
+  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/home/diego/.local/share/nvim/site/pack/packer/start/alpha-nvim",

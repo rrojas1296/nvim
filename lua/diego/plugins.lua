@@ -55,6 +55,7 @@ return packer.startup(function()
   use("bluz71/vim-moonfly-colors")
   use('ivanlhz/vim-electron')
   use("ericbn/vim-solarized")
+  use('overcache/NeoSolarized')
 
 	-- Alpha
 	use("goolord/alpha-nvim")
