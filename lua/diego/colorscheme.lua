@@ -1,3 +1,3 @@
 vim.cmd [[
-  colorscheme embark 
+  colorscheme sonokai 
 ]]
