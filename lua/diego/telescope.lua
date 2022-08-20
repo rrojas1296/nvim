@@ -1,12 +1,12 @@
-local status_ok, telescope = pcall(require,'telescope')
+local status_ok, telescope = pcall(require, 'telescope')
 
 if not status_ok then
   return
 end
 
-telescope.setup{
+telescope.setup {
   defaults = {
-    file_ignore_patterns = {"node_modules",".git",".next"},
+    file_ignore_patterns = { "node_modules", ".git", ".next" },
     prompt_prefix = ' ',
     selection_caret = '  ',
     mappings = {
@@ -18,6 +18,11 @@ telescope.setup{
   pickers = {
     find_files = {
       previewer = false
+    },
+    live_grep = {
+      additional_args = function(opts)
+        return { "--hidden" }
+      end
     },
   },
   extensions = {

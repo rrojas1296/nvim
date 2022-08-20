@@ -120,6 +120,9 @@ return packer.startup(function()
   use('numToStr/Comment.nvim')
   use('JoosepAlviste/nvim-ts-context-commentstring')
 
+  --ToggleTerm
+  use('akinsho/toggleterm.nvim')
+
 	-- Packer Sync
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

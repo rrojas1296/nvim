@@ -51,3 +51,6 @@ require("diego.transparent")
 --Commet
 require("diego.comment")
 
+--ToggleTerm
+require('diego.toggleTerm')
+

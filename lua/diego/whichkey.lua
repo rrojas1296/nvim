@@ -90,8 +90,8 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = { "<cmd>Telescope find_files theme=dropdown<cr>", "Find Files" },
-  ["F"] = { "<cmd>Telescope live_grep no_ignore=true hidden=true<cr>", "Find Text" },
+  ["f"] = { "<cmd>Telescope find_files theme=dropdown hidden=true<cr>", "Find Files" },
+  ["F"] = { "<cmd>Telescope live_grep no_ignore=false hidden=true<cr>", "Find Text" },
 
   p = {
     name = "Packer",
@@ -165,6 +165,7 @@ local mappings = {
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+    g = { "<cmd>lua _GIT_BASH_TOGGLE()<cr>", "Git Bash" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
