@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/home/diego/.local/share/nvim/site/pack/packer/start/rigel",
     url = "https://github.com/Rigellute/rigel"
   },
+  simpleblack = {
+    loaded = true,
+    path = "/home/diego/.local/share/nvim/site/pack/packer/start/simpleblack",
+    url = "https://github.com/lucasprag/simpleblack"
+  },
   sonokai = {
     loaded = true,
     path = "/home/diego/.local/share/nvim/site/pack/packer/start/sonokai",
@@ -263,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/diego/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-github-dark"] = {
+    loaded = true,
+    path = "/home/diego/.local/share/nvim/site/pack/packer/start/vim-github-dark",
+    url = "https://github.com/vv9k/vim-github-dark"
   },
   ["vim-moonfly-colors"] = {
     loaded = true,
