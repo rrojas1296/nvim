@@ -50,7 +50,7 @@ end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" or client.name == "html" or client.name == "jsonls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 	keymapping(bufnr)
 end
