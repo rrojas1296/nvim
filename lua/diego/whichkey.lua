@@ -90,7 +90,7 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = { "<cmd>Telescope find_files theme=dropdown no_ignore=true hidden=true<cr>", "Find Files" },
+  ["f"] = { "<cmd>Telescope find_files theme=dropdown hidden=true<cr>", "Find Files" },
   ["F"] = { "<cmd>Telescope live_grep no_ignore=false hidden=true<cr>", "Find Text" },
 
   p = {

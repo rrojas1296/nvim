@@ -54,3 +54,5 @@ require("diego.comment")
 --ToggleTerm
 require('diego.toggleTerm')
 
+--Flutter Tools
+require('diego.flutter-tools')

@@ -6,7 +6,7 @@ end
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { "node_modules", ".git", ".next" },
+    file_ignore_patterns = { "node_modules", ".git", ".next","build" },
     prompt_prefix = ' ',
     selection_caret = '  ',
     mappings = {

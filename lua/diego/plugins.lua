@@ -125,6 +125,9 @@ return packer.startup(function()
   --ToggleTerm
   use('akinsho/toggleterm.nvim')
 
+  --Flutter Tools
+  use( {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'})
+
 	-- Packer Sync
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
