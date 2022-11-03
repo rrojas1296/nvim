@@ -1,10 +1,10 @@
 local status_ok, flutter = pcall(require, "flutter-tools")
 if not status_ok then
   print('Flutter fails')
-	return
+  return
 end
 
-flutter.setup{
+flutter.setup {
   ui = {
     -- the border type to use for all floating windows, the same options/formats
     -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
@@ -25,7 +25,7 @@ flutter.setup{
       device = false,
     }
   },
-        debugger = { -- integrate with nvim dap + install dart code debugger
+  debugger = { -- integrate with nvim dap + install dart code debugger
     enabled = false,
     run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
     -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
@@ -75,4 +75,5 @@ flutter.setup{
       renameFilesWithClasses = "prompt", -- "always"
       enableSnippets = true,
     }
-  }}
+  }
+}

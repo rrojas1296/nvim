@@ -1,3 +1,3 @@
 vim.cmd [[
-  colorscheme codedark 
+  colorscheme embark
 ]]
