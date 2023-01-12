@@ -35,10 +35,17 @@ packer.init({
     end,
   },
 })
-
 return packer.startup(function()
   -- Packer
   use("wbthomason/packer.nvim")
+
+  -- References
+  use {
+    'wiliamks/nice-reference.nvim',
+    requires = {
+      { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
+    }
+  }
 
   -- Popup
   use("nvim-lua/popup.nvim")
@@ -58,6 +65,7 @@ return packer.startup(function()
   use('ivanlhz/vim-electron')
   use("ericbn/vim-solarized")
   use('overcache/NeoSolarized')
+  use('EdenEast/nightfox.nvim')
 
   -- Alpha
   use("goolord/alpha-nvim")

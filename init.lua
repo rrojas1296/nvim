@@ -56,3 +56,6 @@ require('diego.toggleTerm')
 
 --Flutter Tools
 require('diego.flutter-tools')
+
+--Flutter Tools
+require('diego.nice-references')
