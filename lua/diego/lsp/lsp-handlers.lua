@@ -45,3 +45,7 @@ require('lspconfig')['graphql'].setup({
   on_attach = on_attach,
   capabiliies = capabiliies
 })
+require('lspconfig')['pyright'].setup({
+  on_attach = on_attach,
+  capabiliies = capabiliies
+})
