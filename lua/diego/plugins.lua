@@ -88,10 +88,13 @@ return packer.startup(function()
   use("kyazdani42/nvim-tree.lua")
 
   --LSP
+  use({"williamboman/mason.nvim"})
+  use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")
+  use('onsails/lspkind-nvim')
 
   --LSP-Installer
-  use("williamboman/nvim-lsp-installer")
+  -- use("williamboman/nvim-lsp-installer")
 
   --CMP
   use("hrsh7th/nvim-cmp") -- The completion plugin

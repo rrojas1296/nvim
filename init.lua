@@ -40,7 +40,7 @@ require("diego.indent")
 require("diego.bufferline")
 
 --Treeseeter
-require("diego.treeseter")
+-- require("diego.treeseter")
 
 --Git
 require("diego.gitsigns")
@@ -59,3 +59,6 @@ require('diego.flutter-tools')
 
 --Flutter Tools
 require('diego.nice-references')
+
+--Mason
+require('diego.mason')
