@@ -55,6 +55,7 @@ return packer.startup(function()
 
   -- Themes
   use("sainnhe/sonokai")
+
   use("Rigellute/rigel")
   use({ "embark-theme/vim", name = "embark" })
   use("tomasiser/vim-code-dark")
