@@ -39,14 +39,6 @@ return packer.startup(function()
   -- Packer
   use("wbthomason/packer.nvim")
 
-  -- References
-  use {
-    'wiliamks/nice-reference.nvim',
-    requires = {
-      { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
-    }
-  }
-
   -- Popup
   use("nvim-lua/popup.nvim")
 
@@ -94,8 +86,12 @@ return packer.startup(function()
   use("neovim/nvim-lspconfig")
   use('onsails/lspkind-nvim')
 
-  --LSP-Installer
-  -- use("williamboman/nvim-lsp-installer")
+  --Nice References
+  use ({ 
+    'wiliamks/nice-reference.nvim', 
+    requires = { 
+        { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
+    }})
 
   --CMP
   use("hrsh7th/nvim-cmp") -- The completion plugin
