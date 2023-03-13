@@ -5,6 +5,7 @@ local code_actions = null_ls.builtins.code_actions
 local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
+  formatting.prettier
 }
 
 local lsp_formatting = function(bufnr)
