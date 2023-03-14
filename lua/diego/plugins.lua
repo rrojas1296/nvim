@@ -94,12 +94,13 @@ return packer.startup(function()
   use({
     'wiliamks/nice-reference.nvim',
     requires = {
-      { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end }   --optional
+      { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
     }
   })
 
   --CMP
   use("hrsh7th/nvim-cmp")             -- The completion plugin
+ use( 'hrsh7th/cmp-nvim-lsp')
   use("hrsh7th/cmp-buffer")           -- buffer completions
   use("hrsh7th/cmp-path")             -- path completions
   use("hrsh7th/cmp-cmdline")          -- cmdline completions
@@ -108,6 +109,7 @@ return packer.startup(function()
   use("L3MON4D3/LuaSnip")             --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+  -- use('SirVer/ultisnips')
 
   --Indent
   use("lukas-reineke/indent-blankline.nvim")
