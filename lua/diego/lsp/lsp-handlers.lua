@@ -49,3 +49,7 @@ require('lspconfig')['pyright'].setup({
   on_attach = on_attach,
   capabiliies = capabiliies
 })
+require('lspconfig')['eslint'].setup({
+  on_attach = on_attach,
+  capabiliies = capabiliies
+})

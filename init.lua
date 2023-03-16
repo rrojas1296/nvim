@@ -40,7 +40,7 @@ require("diego.indent")
 require("diego.bufferline")
 
 --Treeseeter
--- require("diego.treeseter")
+require("diego.treeseter")
 
 --Git
 require("diego.gitsigns")

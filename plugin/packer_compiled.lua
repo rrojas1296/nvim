@@ -150,6 +150,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\goto-preview",
     url = "https://github.com/rmagatti/goto-preview"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\impatient.nvim",
@@ -254,6 +259,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\droja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

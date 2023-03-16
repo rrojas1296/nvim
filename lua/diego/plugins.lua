@@ -63,6 +63,8 @@ return packer.startup(function()
   use('overcache/NeoSolarized')
   use('EdenEast/nightfox.nvim')
   use("cormacrelf/vim-colors-github")
+  use('ellisonleao/gruvbox.nvim')
+  use('nyoom-engineering/oxocarbon.nvim')
 
   -- Alpha
   use("goolord/alpha-nvim")
