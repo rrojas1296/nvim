@@ -24,8 +24,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "gr", ":Lspsaga lsp_finder<CR>", opts)
-
 keymap("n", "<leader>l", ":w! <bar> %bd <bar> e# <bar> bd# <CR>", opts)
 
 -- Resize with arrows
