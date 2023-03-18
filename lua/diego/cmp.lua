@@ -107,12 +107,15 @@ cmp.setup {
       return vim_item
     end,
   },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },   -- For vsnip users.
+    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'path' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
+  }, {
+    { name = 'buffer' },
+  }),
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -122,4 +125,3 @@ cmp.setup {
     native_menu = false,
   },
 }
-

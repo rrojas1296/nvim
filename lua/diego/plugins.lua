@@ -43,7 +43,10 @@ return packer.startup(function()
   use("nvim-lua/popup.nvim")
 
   -- Lualine
-  use("nvim-lualine/lualine.nvim")
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Themes
   use("sainnhe/sonokai")
@@ -92,6 +95,11 @@ return packer.startup(function()
   use("neovim/nvim-lspconfig")
   use('onsails/lspkind-nvim')
 
+  --LSP-Saga
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+  })
   --Nice References
   use({
     'wiliamks/nice-reference.nvim',
@@ -102,7 +110,7 @@ return packer.startup(function()
 
   --CMP
   use("hrsh7th/nvim-cmp")             -- The completion plugin
- use( 'hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lsp')
   use("hrsh7th/cmp-buffer")           -- buffer completions
   use("hrsh7th/cmp-path")             -- path completions
   use("hrsh7th/cmp-cmdline")          -- cmdline completions

@@ -16,8 +16,8 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gd', "<cmd>Lspsaga goto_definition<CR>", bufopts)
+  vim.keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -30,26 +30,15 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 end
 
-local capabiliies = vim.lsp.protocol.make_client_capabilities()
-capabiliies = require('cmp_nvim_lsp').default_capabilities(capabiliies)
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-require('lspconfig')['tsserver'].setup({
-  on_attach = on_attach,
-  capabiliies = capabiliies
-})
-require('lspconfig')['lua_ls'].setup({
-  on_attach = on_attach,
-  capabiliies = capabiliies
-})
-require('lspconfig')['graphql'].setup({
-  on_attach = on_attach,
-  capabiliies = capabiliies
-})
-require('lspconfig')['pyright'].setup({
-  on_attach = on_attach,
-  capabiliies = capabiliies
-})
-require('lspconfig')['eslint'].setup({
-  on_attach = on_attach,
-  capabiliies = capabiliies
-})
+local servers = { 'tsserver', 'tailwindcss', 'pyright', 'eslint', 'graphql', 'lua_ls' }
+
+for server = 1, 6 do
+  require('lspconfig')[servers[server]].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end

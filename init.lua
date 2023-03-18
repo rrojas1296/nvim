@@ -27,6 +27,9 @@ require("diego.nvim-tree")
 --LSP
 require("diego.lsp")
 
+--LSP-Saga
+require('diego.lspsaga')
+
 --Null-ls
 require("diego.lsp.null-ls")
 
@@ -62,3 +65,6 @@ require('diego.nice-references')
 
 --Mason
 require('diego.mason')
+
+--LuaLine
+require('diego.LuaLine')
