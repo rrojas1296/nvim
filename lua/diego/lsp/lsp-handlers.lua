@@ -17,10 +17,21 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'tailwindcss', 'pyright', 'eslint', 'graphql', 'lua_ls' }
+local servers = {
+  'tsserver',
+  'tailwindcss',
+  'pyright',
+  'eslint',
+  'graphql',
+  'lua_ls',
+  'cssls',
+  "emmet_ls",
+  "html"
+}
 
-for server = 1, 6 do
-  require('lspconfig')[servers[server]].setup {
+for _, server in pairs(servers) do
+  -- server = vim.split(server, "@")[1]
+  require('lspconfig')[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
