@@ -67,4 +67,4 @@ require('diego.nice-references')
 require('diego.mason')
 
 --LuaLine
-require('diego.LuaLine')
+require('diego.lualine')
