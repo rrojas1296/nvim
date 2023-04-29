@@ -91,7 +91,11 @@ nvim_tree.setup {
   renderer = {
     group_empty = true,
   },
+  git ={
+    ignore = true,
+    enable = true,
+  },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 }
