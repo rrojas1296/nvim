@@ -162,6 +162,9 @@ return packer.startup(function()
   --Flutter Tools
   use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' })
 
+  --Flutter snippets
+  use('Nash0x7E2/awesome-flutter-snippets')
+
   -- Packer Sync
   if PACKER_BOOTSTRAP then
     require("packer").sync()
