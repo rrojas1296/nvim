@@ -160,7 +160,13 @@ return packer.startup(function()
   use('akinsho/toggleterm.nvim')
 
   --Flutter Tools
-  use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' })
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+    },
+  }
 
   --Flutter snippets
   use('Nash0x7E2/awesome-flutter-snippets')
