@@ -28,7 +28,7 @@ require("diego.nvim-tree")
 require("diego.lsp")
 
 --LSP-Saga
-require('diego.lspsaga')
+-- require('diego.lspsaga')
 
 --Null-ls
 require("diego.lsp.null-ls")
