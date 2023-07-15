@@ -97,18 +97,11 @@ return packer.startup(function()
 
   --LSP-Saga
   use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    opt = true,
-    event = "LspAttach",
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
     config = function()
       require('diego.lspsaga')
     end,
-    requires = {
-      { "nvim-tree/nvim-web-devicons" },
-      --Please make sure you install markdown and markdown_inline parser
-      { "nvim-treesitter/nvim-treesitter" }
-    }
   })
   --Nice References
   use({
@@ -164,7 +157,7 @@ return packer.startup(function()
     'akinsho/flutter-tools.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   }
 
