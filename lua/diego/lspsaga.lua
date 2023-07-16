@@ -6,14 +6,14 @@ lspsaga.setup({
     min_width = 30,
     force_max_height = false,
     keys = {
-      jump_to = 'p',
+      shuttle = 'p',
       toggle_or_open = '<CR>',
       vsplit = 's',
       split = 'i',
       tabe = 't',
       tabnew = 'r',
-      quit = { 'q', '<ESC>' },
-      close_in_preview = '<ESC>',
+      quit = { '<ESC>' },
+      close = '<ESC>',
     },
   },
 })
