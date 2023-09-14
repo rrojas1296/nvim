@@ -87,7 +87,12 @@ return packer.startup(function()
   use("windwp/nvim-autopairs")
 
   --Tree-explorer-nvim
-  use("kyazdani42/nvim-tree.lua")
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
 
   --LSP
   use({ "williamboman/mason.nvim" })
