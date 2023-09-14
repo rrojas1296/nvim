@@ -85,6 +85,7 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["r"] = { "<cmd>:Telescope oldfiles hidden=true<CR>", "Recent Files" },
   ["w"] = { "<cmd>w<CR>", "Save" },
   ["vs"] = { "<cmd>vsp<cr>", "Split" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
