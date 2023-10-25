@@ -68,3 +68,4 @@ require('diego.mason')
 
 --LuaLine
 require('diego.lualine')
+
