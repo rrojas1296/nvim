@@ -2,16 +2,10 @@ local lspsaga = require('lspsaga')
 
 lspsaga.setup({
   finder = {
-    max_height = 0.5,
-    min_width = 30,
+    max_height = 0.6,
     force_max_height = false,
     keys = {
-      shuttle = 'p',
       toggle_or_open = '<CR>',
-      vsplit = 's',
-      split = 'i',
-      tabe = 't',
-      tabnew = 'r',
       quit = '<ESC>',
     },
   },
