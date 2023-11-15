@@ -94,9 +94,9 @@ return packer.startup(function()
   use("windwp/nvim-autopairs")
 
   use {
-  "nvim-neo-tree/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -150,9 +150,9 @@ return packer.startup(function()
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('diego.comment')
+      require('diego.comment')
     end
-}
+  }
 
   --ToggleTerm
   use('akinsho/toggleterm.nvim')
@@ -169,11 +169,14 @@ return packer.startup(function()
   --Flutter snippets
   use('Nash0x7E2/awesome-flutter-snippets')
 
-    --Tree sitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
   -- Packer Sync
   if PACKER_BOOTSTRAP then
