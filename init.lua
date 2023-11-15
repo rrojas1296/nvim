@@ -63,5 +63,5 @@ require("diego.options")
 require("diego.keymaps")
 
 --Themes
-require("diego.colorscheme")
+require("diego.themes.catppuccin")
 
