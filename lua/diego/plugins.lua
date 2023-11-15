@@ -154,7 +154,6 @@ return packer.startup(function()
 
   --Commenter
   use('numToStr/Comment.nvim')
-  use('JoosepAlviste/nvim-ts-context-commentstring')
 
   --ToggleTerm
   use('akinsho/toggleterm.nvim')
