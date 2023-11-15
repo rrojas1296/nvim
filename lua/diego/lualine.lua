@@ -13,13 +13,4 @@ lualine.setup({
       }
     }
   },
-  tabline = {
-    lualine_a = {
-      {
-        "filename",
-        path = 1
-
-      }
-    }
-  }
 })

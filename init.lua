@@ -32,7 +32,7 @@ require("diego.cmp")
 require("diego.indent")
 
 --BufferLine
--- require("diego.bufferline")
+require("diego.bufferline")
 
 --Git
 require("diego.gitsigns")
