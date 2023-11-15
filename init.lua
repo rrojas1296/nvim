@@ -1,10 +1,5 @@
--- Plugins and settings
-require("diego.options")
-require("diego.keymaps")
+-- Plugins
 require("diego.plugins")
-
---Themes
-require("diego.colorscheme")
 
 --Impatient
 require("diego.impatient")
@@ -21,14 +16,11 @@ require("diego.whichkey")
 --Autopairs
 require("diego.autopairs")
 
---Nvim-tree-explorer
-require("diego.nvim-tree")
+--Neo-tree
+require('diego.neotree')
 
 --LSP
 require("diego.lsp")
-
---LSP-Saga
--- require('diego.lspsaga')
 
 --Null-ls
 require("diego.lsp.null-ls")
@@ -60,12 +52,16 @@ require('diego.toggleTerm')
 --Flutter Tools
 require('diego.flutter-tools')
 
---Flutter Tools
-require('diego.nice-references')
-
 --Mason
 require('diego.mason')
 
 --LuaLine
 require('diego.lualine')
+
+-- Settings
+require("diego.options")
+require("diego.keymaps")
+
+--Themes
+require("diego.colorscheme")
 

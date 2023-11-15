@@ -36,7 +36,7 @@ local setup = {
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
-    group = "+",      -- symbol prepended to a group
+    group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
     scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -80,14 +80,19 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
+  b = {
+    name = "Buffers",
+    c = { "<cmd>w! <bar> %bd! <bar> e# <bar> bd# <CR>", "Close All Buffers" }
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["e"] = { "<cmd>Neotree toggle<cr>", "Explorer" },
   ["r"] = { "<cmd>:Telescope oldfiles hidden=true<CR>", "Recent Files" },
   ["w"] = { "<cmd>w<CR>", "Save" },
   ["vs"] = { "<cmd>vsp<cr>", "Split" },
+  v = {
+    name = "Splits",
+    s = { "<cmd>vsp<cr>", "Vertical" },
+    c = { "<cmd>on<cr>", "Close all splits" }
+  },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },

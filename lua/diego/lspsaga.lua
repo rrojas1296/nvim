@@ -1,4 +1,14 @@
-local lspsaga = require('lspsaga')
+local status_ok, lspsaga = pcall(require, 'lspsaga')
+if not status_ok then
+  return
+end
+local keymap = vim.keymap.set
+
+local opts = { noremap = true, silent = true }
+
+keymap("n", "gr", "<cmd>Lspsaga finder ref<CR>", opts)
+keymap('n', 'gd', "<cmd>Lspsaga goto_definition<CR>", opts)
+keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
 
 lspsaga.setup({
   finder = {
@@ -10,21 +20,3 @@ lspsaga.setup({
     },
   },
 })
-
-local keymap = vim.keymap.set
-
-local opts = { noremap = true, silent = true }
-
-keymap("n", "gr", "<cmd>Lspsaga finder ref<CR>", opts)
-keymap('n', 'gd', "<cmd>Lspsaga goto_definition<CR>", opts)
-keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-
--- Diagnostic jump with filters such as only jumping to an error
-keymap("n", "[E", function()
-  require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end)
-keymap("n", "]E", function()
-  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-end)

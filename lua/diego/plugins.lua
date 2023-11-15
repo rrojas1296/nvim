@@ -31,7 +31,13 @@ end
 packer.init({
   display = {
     open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
+      local columns = vim.o.columns
+      local lines = vim.o.lines
+      local width = math.ceil(columns * 0.4)
+      local height = math.ceil(lines * 0.4 - 4)
+      local left = math.ceil((columns - width) * 0.5)
+      local top = math.ceil((lines - height) * 0.5 - 1)
+      return require("packer.util").float({ border = "rounded", width = width, height = height, col = left, row = top })
     end,
   },
 })
@@ -87,12 +93,15 @@ return packer.startup(function()
   --Autopairs
   use("windwp/nvim-autopairs")
 
-  --Tree-explorer-nvim
   use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
   }
 
   --LSP
@@ -109,13 +118,6 @@ return packer.startup(function()
       require('diego.lspsaga')
     end,
   })
-  --Nice References
-  use({
-    'wiliamks/nice-reference.nvim',
-    requires = {
-      { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {} end } --optional
-    }
-  })
 
   --CMP
   use("hrsh7th/nvim-cmp")             -- The completion plugin
@@ -127,7 +129,6 @@ return packer.startup(function()
   use("L3MON4D3/LuaSnip")             --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-  -- use('SirVer/ultisnips')
 
   --Indent
   use("lukas-reineke/indent-blankline.nvim")
@@ -172,6 +173,6 @@ return packer.startup(function()
 
   -- Packer Sync
   if PACKER_BOOTSTRAP then
-    require("packer").sync()
+    packer.sync()
   end
 end)

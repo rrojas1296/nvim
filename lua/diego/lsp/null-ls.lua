@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
   formatting.prettier,
-  formatting.autopep8
+  formatting.autopep8,
 }
 
 -- if you want to set up formatting on save, you can use this as a callback
@@ -19,14 +19,14 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd("BufWritePost", {
       group = augroup,
       buffer = bufnr,
       callback = function()
         -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
         -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
         vim.lsp.buf.format({
-          async = false,
+          async = true,
           bufnr = bufnr,
           timeout_ms = 2000,
           filter = function(client)
