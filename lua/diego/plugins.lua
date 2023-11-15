@@ -153,7 +153,12 @@ return packer.startup(function()
   use("xiyaowong/nvim-transparent")
 
   --Commenter
-  use('numToStr/Comment.nvim')
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('diego.comment')
+    end
+}
 
   --ToggleTerm
   use('akinsho/toggleterm.nvim')
