@@ -32,10 +32,7 @@ require("diego.cmp")
 require("diego.indent")
 
 --BufferLine
-require("diego.bufferline")
-
---Treeseeter
-require("diego.treeseter")
+-- require("diego.bufferline")
 
 --Git
 require("diego.gitsigns")
@@ -61,6 +58,9 @@ require('diego.lualine')
 -- Settings
 require("diego.options")
 require("diego.keymaps")
+
+--Treeseeter
+require("diego.treeseter")
 
 --Themes
 require("diego.themes.catppuccin")
