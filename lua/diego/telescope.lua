@@ -18,10 +18,17 @@ telescope.setup {
   pickers = {
     find_files = {
       previewer = false ,
-      theme = "dropdown"
+      theme = "dropdown",
+      hidden = true 
+    },
+    oldfiles = {
+      previewer = false ,
+      theme = "dropdown",
+      hidden = true 
     },
     live_grep = {
       additional_args = function(opts)
+      hidden = true 
         return { "--hidden" }
       end
     },

@@ -17,9 +17,9 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = "󰊄",
+  Text = "󰊄 ",
   Method = " ",
-  Function = "󰊕",
+  Function = "󰊕 ",
   Constructor = " ",
   Field = " ",
   Variable = " ",
@@ -27,7 +27,7 @@ local kind_icons = {
   Interface = " ",
   Module = " ",
   Property = " ",
-  Unit = "",
+  Unit = " ",
   Value = " ",
   Enum = " ",
   Keyword = " ",
@@ -39,7 +39,7 @@ local kind_icons = {
   EnumMember = " ",
   Constant = " ",
   Struct = " ",
-  Event = "",
+  Event = " ",
   Operator = " ",
   TypeParameter = " ",
 }
@@ -50,6 +50,10 @@ cmp.setup {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -94,16 +98,12 @@ cmp.setup {
   }),
   formatting = {
     fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
+    format = function(_, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
+      if kind_icons[vim_item.kind] then
+        print(vim_item.kind)
+        vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) .. "  " .. vim_item.kind
+      end
       return vim_item
     end,
   },
@@ -111,7 +111,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'vsnip' },   -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
-    { name = 'path' }, -- For ultisnips users.
+    { name = 'path' },    -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
     { name = 'buffer' },

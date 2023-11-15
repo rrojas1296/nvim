@@ -21,7 +21,7 @@ local keymap = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 
-keymap("n", "gr", ":Lspsaga finder ref<CR>", opts)
+keymap("n", "gr", "<cmd>Lspsaga finder ref<CR>", opts)
 keymap('n', 'gd', "<cmd>Lspsaga goto_definition<CR>", opts)
 keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")

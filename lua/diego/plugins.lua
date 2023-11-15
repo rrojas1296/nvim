@@ -68,6 +68,7 @@ return packer.startup(function()
   use("cormacrelf/vim-colors-github")
   use('ellisonleao/gruvbox.nvim')
   use('nyoom-engineering/oxocarbon.nvim')
+  use('craftzdog/solarized-osaka.nvim')
 
   -- Alpha
   use("goolord/alpha-nvim")
