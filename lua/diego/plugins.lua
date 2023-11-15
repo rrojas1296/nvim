@@ -136,12 +136,6 @@ return packer.startup(function()
   --Bufferline
   use("akinsho/bufferline.nvim")
 
-  --Treeseeter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
-
   -- Git
   use("lewis6991/gitsigns.nvim")
   use("tpope/vim-fugitive")
@@ -174,6 +168,12 @@ return packer.startup(function()
 
   --Flutter snippets
   use('Nash0x7E2/awesome-flutter-snippets')
+
+    --Tree sitter
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  })
 
   -- Packer Sync
   if PACKER_BOOTSTRAP then

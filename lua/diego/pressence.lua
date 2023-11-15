@@ -1,4 +1,4 @@
-local status_ok,pressence = pcall(register,'presence')
+local status_ok,pressence = pcall(require,'presence')
 
 if not status_ok then
   return
