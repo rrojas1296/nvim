@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Dashboard<cr>", "Alpha" },
+  ["a"] = { "<cmd>Dashboard<cr>", "Dashboard" },
   b = {
     name = "Buffers",
     c = { "<cmd>w! <bar> %bd! <bar> e# <bar> bd# <CR>", "Close All Buffers" }
