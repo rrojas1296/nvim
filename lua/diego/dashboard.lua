@@ -111,7 +111,7 @@ dashboard.setup({
       return { "", "", "", "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
     end,
     center = buttons,
-    header = logo 
+    header = logo
   },
   hide = {
     statuslinne = true,

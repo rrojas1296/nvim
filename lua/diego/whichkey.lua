@@ -53,7 +53,7 @@ local setup = {
     height = { min = 4, max = 25 },                                             -- min and max height of the columns
     width = { min = 20, max = 50 },                                             -- min and max width of the columns
     spacing = 3,                                                                -- spacing between columns
-    align = "left",                                                             -- align columns left, center or right
+    align = "center",                                                             -- align columns left, center or right
   },
   ignore_missing = true,                                                        -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
@@ -98,14 +98,6 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
   g = {
     name = "Git",
     c = { "<cmd>Git commit<cr>", "Make Commit" },
