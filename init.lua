@@ -65,3 +65,6 @@ require("diego.treeseter")
 --Themes
 require("diego.themes.catppuccin")
 
+-- NeoDev
+require('diego.neodev')
+
