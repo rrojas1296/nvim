@@ -2,7 +2,6 @@
 require("diego.options")
 require("diego.keymaps")
 
-
 -- Plugins
 require("diego.plugins")
 
