@@ -6,7 +6,7 @@ end
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { "node_modules", ".git", ".next","build" },
+    file_ignore_patterns = { "node_modules", ".git", ".next", "build" },
     prompt_prefix = ' ',
     selection_caret = '  ',
     mappings = {
@@ -17,18 +17,17 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      previewer = false ,
+      previewer = false,
       theme = "dropdown",
-      hidden = true 
+      hidden = true
     },
     oldfiles = {
-      previewer = false ,
+      previewer = false,
       theme = "dropdown",
-      hidden = true 
+      hidden = true
     },
     live_grep = {
-      additional_args = function(opts)
-      hidden = true 
+      additional_args = function()
         return { "--hidden" }
       end
     },

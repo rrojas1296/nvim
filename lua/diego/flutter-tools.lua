@@ -62,7 +62,6 @@ flutter.setup {
       virtual_text = true, -- show the highlight using virtual text
       virtual_text_str = "■", -- the virtual text character to highlight
     },
-    on_attach = my_custom_on_attach,
     capabilities = function(config)
       config.specificThingIDontWant = false
       return config
