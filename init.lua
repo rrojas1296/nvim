@@ -4,9 +4,6 @@ require("diego.plugins")
 --Impatient
 require("diego.impatient")
 
---Alpha
-require("diego.alpha")
-
 --Telescope
 require("diego.telescope")
 

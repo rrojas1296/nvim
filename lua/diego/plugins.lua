@@ -24,6 +24,9 @@ lazy.setup({
   -- Popup
   "nvim-lua/popup.nvim",
 
+  -- UI
+  { "MunifTanjim/nui.nvim", lazy = true },
+
   -- Lualine
   {
     'nvim-lualine/lualine.nvim',
@@ -36,8 +39,15 @@ lazy.setup({
   -- Theme
   "catppuccin/nvim",
 
-  -- Alpha
-  "goolord/alpha-nvim",
+  -- Dashboard
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('diego.dashboard')
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
 
   -- Impatient
   "lewis6991/impatient.nvim",

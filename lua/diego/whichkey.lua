@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["a"] = { "<cmd>Dashboard<cr>", "Alpha" },
   b = {
     name = "Buffers",
     c = { "<cmd>w! <bar> %bd! <bar> e# <bar> bd# <CR>", "Close All Buffers" }
@@ -96,8 +96,8 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = { "<cmd>Telescope find_files hidden=true theme=dropdown<cr>", "Find Files" },
-  ["F"] = { "<cmd>Telescope live_grep no_ignore=false hidden=true<cr>", "Find Text" },
+  ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+  ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },

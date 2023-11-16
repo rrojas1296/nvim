@@ -19,7 +19,7 @@ telescope.setup {
     find_files = {
       previewer = false,
       theme = "dropdown",
-      hidden = true
+      hidden = false 
     },
     oldfiles = {
       previewer = false,
