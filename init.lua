@@ -1,3 +1,8 @@
+-- Settings
+require("diego.options")
+require("diego.keymaps")
+
+
 -- Plugins
 require("diego.plugins")
 
@@ -51,10 +56,6 @@ require('diego.mason')
 
 --LuaLine
 require('diego.lualine')
-
--- Settings
-require("diego.options")
-require("diego.keymaps")
 
 --Treeseeter
 require("diego.treeseter")
