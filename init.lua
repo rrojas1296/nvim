@@ -1,9 +1,8 @@
 -- Settings
-require("diego.options")
-require("diego.keymaps")
+require("diego.config")
 
--- Plugins
-require("diego.plugins")
+--Lazy 
+require("diego.lazy")
 
 --Impatient
 require("diego.impatient")
@@ -60,7 +59,7 @@ require('diego.lualine')
 require("diego.treeseter")
 
 --Themes
-require("diego.themes.catppuccin")
+require("diego.themes")
 
 -- NeoDev
 require('diego.neodev')

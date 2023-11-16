@@ -9,4 +9,6 @@ catppuccin.setup({
 })
 
 local colorscheme = vim.cmd.colorscheme
+
 colorscheme "catppuccin"
+
