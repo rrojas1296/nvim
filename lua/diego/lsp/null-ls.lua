@@ -5,8 +5,6 @@ if not status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
-local code_actions = null_ls.builtins.code_actions
-local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
   formatting.prettier,
@@ -29,7 +27,7 @@ local on_attach = function(client, bufnr)
           async = true,
           bufnr = bufnr,
           timeout_ms = 2000,
-          filter = function(client)
+          filter = function(_)
             return client.name == "null-ls"
           end
         })
