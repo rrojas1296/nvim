@@ -64,4 +64,3 @@ require("diego.themes.catppuccin")
 
 -- NeoDev
 require('diego.neodev')
-

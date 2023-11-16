@@ -11,12 +11,13 @@ keymap('n', 'gd', "<cmd>Lspsaga goto_definition<CR>", opts)
 keymap('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
 
 lspsaga.setup({
+  layout = 'float',
   finder = {
     max_height = 0.6,
     force_max_height = false,
     keys = {
-      toggle_or_open = '<CR>',
-      quit = '<ESC>',
+      toggle_or_open = 'l',
+      quit = 'q',
     },
   },
 })
