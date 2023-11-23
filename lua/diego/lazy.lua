@@ -13,4 +13,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Cargar Plugins
-require("diego.plugins")
+require('lazy').setup("diego.plugins")
