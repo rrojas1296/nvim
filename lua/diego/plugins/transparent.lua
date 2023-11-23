@@ -15,6 +15,8 @@ return {
             "BufferLineBackground",
             "BufferLineSeparator",
             "BufferLineIndicatorSelected",
+            "NeoTreeNormal",
+            "NeoTreeNormalNC"
           },
         })
   end
