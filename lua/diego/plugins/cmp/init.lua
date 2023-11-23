@@ -5,15 +5,20 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
+    'neovim/nvim-lspconfig',
+    'quangnguyen30192/cmp-nvim-ultisnips',
+    'SirVer/ultisnips',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
-    "windwp/nvim-autopairs"
+    "windwp/nvim-autopairs",
+    "rafamadriz/friendly-snippets"
   },
   event = "VeryLazy",
   config = function()
     local cmp = require('cmp')
     local icons = require('diego.plugins.cmp.icons')
     local luasnip = require('luasnip')
+    require("luasnip/loaders/from_vscode").lazy_load()
     local autopairs = require('nvim-autopairs')
     local servers = require('diego.plugins.cmp.servers')
     local on_attach = function(_, bufnr)
@@ -27,6 +32,7 @@ return {
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body) -- For `luasnip` users.
+          vim.fn["UltiSnips#Anon"](args.body)
         end,
       },
       window = {

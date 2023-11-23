@@ -8,7 +8,7 @@ return {
         lualine_c = {
           {
             'filename',
-            path = 0
+            path = 1
           }
         }
       }
