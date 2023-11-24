@@ -109,7 +109,15 @@ return {
     for _, server in pairs(servers) do
       require('lspconfig')[server].setup {
         capabilities = capabilities,
-        on_attach = on_attach
+        on_attach = on_attach,
+        handlers = {
+          ["textDocument/publishDiagnostics"] = vim.lsp.with(
+            vim.lsp.diagnostic.on_publish_diagnostics, {
+              -- Disable virtual_text
+              virtual_text = false 
+            }
+          ),
+        }
       }
     end
   end

@@ -17,8 +17,8 @@ return {
         max_height = 0.6,
         force_max_height = false,
         keys = {
-          toggle_or_open = 'l',
-          quit = 'q',
+          toggle_or_open = '<cr>',
+          quit = '<esc>',
         },
       },
     })

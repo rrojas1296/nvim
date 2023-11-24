@@ -9,7 +9,7 @@ return {
     "rcarriga/nvim-notify",
   },
   config = function()
-    local noise = require('noice')
-    noise.setup()
+    local noice = require('noice')
+    noice.setup()
   end
 }
