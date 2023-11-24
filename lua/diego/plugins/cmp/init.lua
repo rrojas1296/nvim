@@ -6,8 +6,8 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'neovim/nvim-lspconfig',
-    'quangnguyen30192/cmp-nvim-ultisnips',
-    'SirVer/ultisnips',
+    -- 'quangnguyen30192/cmp-nvim-ultisnips',
+    -- 'SirVer/ultisnips',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     "windwp/nvim-autopairs",
@@ -32,7 +32,7 @@ return {
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body) -- For `luasnip` users.
-          vim.fn["UltiSnips#Anon"](args.body)
+          -- vim.fn["UltiSnips#Anon"](args.body)
         end,
       },
       window = {
