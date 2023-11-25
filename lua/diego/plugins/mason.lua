@@ -31,7 +31,8 @@ return {
         "vimls",
         "luau_lsp",
         "docker_compose_language_service",
-        "dockerls"
+        "dockerls",
+        "astro"
       },
       automatic_installation = true,
     }

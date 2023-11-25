@@ -10,5 +10,6 @@ return {
   "html",
   "lua_ls",
   "vimls",
-  "luau_lsp"
+  "luau_lsp",
+  "astro"
 }
