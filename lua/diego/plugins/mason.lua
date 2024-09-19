@@ -18,7 +18,7 @@ return {
         }
       },
       ensure_installed = {
-        'tsserver',
+        'ts_ls',
         'tailwindcss',
         'pyright',
         'eslint',

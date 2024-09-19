@@ -11,7 +11,8 @@ return {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     "windwp/nvim-autopairs",
-    "rafamadriz/friendly-snippets"
+    "rafamadriz/friendly-snippets",
+    "mlaursen/vim-react-snippets",
   },
   event = "VeryLazy",
   config = function()
@@ -20,6 +21,7 @@ return {
     local luasnip = require('luasnip')
     require("luasnip/loaders/from_vscode").lazy_load()
     local autopairs = require('nvim-autopairs')
+    local reactSnipets = require("vim-react-snippets").lazy_load()
     local servers = require('diego.plugins.cmp.servers')
     local on_attach = function(_, bufnr)
       -- Enable completion triggered by <c-x><c-o>
@@ -79,6 +81,7 @@ return {
       }),
       formatting = {
         fields = { "kind", "abbr", "menu" },
+        expandable_indicator = true,
         format = function(_, vim_item)
           if icons[vim_item.kind] then
             print(vim_item.kind)
@@ -114,7 +117,7 @@ return {
           ["textDocument/publishDiagnostics"] = vim.lsp.with(
             vim.lsp.diagnostic.on_publish_diagnostics, {
               -- Disable virtual_text
-              virtual_text = false 
+              virtual_text = true
             }
           ),
         }

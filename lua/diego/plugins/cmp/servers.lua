@@ -1,5 +1,5 @@
 return {
-  'tsserver',
+  'ts_ls',
   'tailwindcss',
   'pyright',
   'eslint',

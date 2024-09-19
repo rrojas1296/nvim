@@ -1,87 +1,102 @@
 return {
-  ["a"] = { "<cmd>Dashboard<cr>", "Dashboard" },
-  b = {
-    name = "Buffers",
-    c = { "<cmd>w! <bar> %bd! <bar> e# <bar> bd# <CR>", "Close All Buffers" }
+  {
+    "<leader>a", "<cmd>Dashboard<cr>", desc = "Dashboard", mode = "n",
   },
-  ["e"] = { "<cmd>Neotree toggle<cr>", "Explorer" },
-  ["r"] = { "<cmd>:Telescope oldfiles hidden=true<CR>", "Recent Files" },
-  ["w"] = { "<cmd>w<CR>", "Save" },
-  ["vs"] = { "<cmd>vsp<cr>", "Split" },
-  v = {
-    name = "Splits",
-    s = { "<cmd>vsp<cr>", "Vertical" },
-    c = { "<cmd>on<cr>", "Close all splits" }
+  {
+    "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
   },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-  g = {
-    name = "Git",
-    c = { "<cmd>Git commit<cr>", "Make Commit" },
-    a = { "<cmd>Git add .<cr>", "Add files" },
-    p = { "<cmd>Git push<cr>", "Push Changes" },
-    o = { "<cmd>Telescope git_status<cr>", "Search changed files" },
-    b = { "<cmd>Telescope git_branches<cr>", "Search Branch" },
-    q = { "<cmd>Telescope git_commits<cr>", "Search Commits" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
+  {
+    "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
+  },
+  {
+    "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n",
+  },
+  {
+    "<leader>v",
+    group = "Slip",
+
+    {
+      "<leader>vs", "<cmd>vsp<cr>", desc = "Split", mode = "n",
+    },
+
+    {
+      "<leader>vc", "<cmd>on<cr>", desc = "Close all splits", mode = "n",
     },
   },
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
+  {
+    "<leader>c", "<cmd>bdelete<cr>", desc = "Close Buffer", mode = "n",
+  },
+  {
+    "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer", mode = "n",
+  },
+  {
+    "<leader>q", "<cmd>q!<cr>", desc = "Quit", mode = "n",
+  },
+  {
+    "<leader>g",
+    group = 'Git',
+    {
+      "<leader>gc", "<cmd>Git commit<cr>", desc = "Make Commit", mode = "n",
+
     },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
+    {
+      "<leader>ga", "<cmd>Git add .<cr>", desc = "Add files", mode = "n",
     },
-    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
+    {
+      "<leader>gp", "<cmd>Git push<cr>", desc = "Push Changes", mode = "n",
     },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
+    {
+      "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Search changed files", mode = "n",
     },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Lspsaga show_line_diagnostics<CR>", "See Diagnostics" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
+    {
+      "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Search Branch", mode = "n",
+    },
+    {
+      "<leader>gq", "<cmd>Telescope git_commits<cr>", desc = "Search Commits", mode = "n",
+    },
+    {
+      "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff", mode = "n",
     },
   },
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+  {
+    "<leader>l",
+    group = "LSP",
+    {
+      "<leader>ls", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "See Diagnostics", mode = "n",
+    },
+    {
+      "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
+    },
+    {
+      "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format", mode = "n",
+    }
   },
-  t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    g = { "<cmd>lua _GIT_BASH_TOGGLE()<cr>", "Git Bash" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-  },
+  {
+    "<leader>t",
+    group = "Terminal",
+    {
+      "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node", mode = "n",
+    },
+    {
+      "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<cr>", desc = "NCDU", mode = "n",
+    },
+    {
+      "<leader>tt", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "Htop", mode = "n",
+    },
+    {
+      "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", desc = "Python", mode = "n",
+    },
+    {
+      "<leader>tg", "<cmd>lua _GIT_BASH_TOGGLE()<cr>", desc = "Git Bash", mode = "n",
+    },
+    {
+      "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float", mode = "n",
+    },
+    {
+      "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal", mode = "n",
+    },
+    {
+      "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical", mode = "n",
+    },
+  }
 }
