@@ -34,7 +34,7 @@ cd ~/.config/nvim
 ```
 
 ```bash
-cd nvim
+nvim
 ```
 
 ## ⚡️ Requirements
