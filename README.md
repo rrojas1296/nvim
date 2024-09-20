@@ -44,3 +44,5 @@ cd nvim
 
 - Neovim >= 0.5.0
 - Node.js >= 12.12.0
+- Nerd Fonts (https://www.nerdfonts.com/)
+- Terminal with true color support (Alacritty, Kitty, iTerm2, Gnome Terminal, and Neovim built-in terminal)
