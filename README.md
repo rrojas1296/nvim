@@ -17,10 +17,13 @@
 
 # Devup2332 neovim configuration
 
-This is my personal configuration for Neovim from 2024
+This is my personal configuration for Neovim for 2024
 
 <p align="center">
     <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726808646/Screenshot_20240919_233551_nudloo.png" width="700px"/>
+    <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726812016/Screenshot_20240920_005923_kyp81z.png" width="700px"/>
+    <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726812016/Screenshot_20240920_005852_xzb6eg.png" width="700px"/>
+    <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726812032/Screenshot_20240920_005939_eivqta.png" width="700px"/>
 </p>
 
 ## 🚀 Installation
