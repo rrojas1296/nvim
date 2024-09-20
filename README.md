@@ -27,6 +27,17 @@ This is my personal configuration for Neovim from 2024
 
 ```bash
 git clone https://github.com/devup2332/nvim ~/.config/nvim
-cd nvim
-nvim
 ```
+
+```bash
+cd ~/.config/nvim 
+```
+
+```bash
+cd nvim
+```
+
+## Requirements
+
+- Neovim >= 0.5.0
+- Node.js >= 12.12.0
