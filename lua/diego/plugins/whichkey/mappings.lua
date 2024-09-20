@@ -57,6 +57,12 @@ return {
     {
       "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff", mode = "n",
     },
+    {
+      "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit", mode = "n",
+    },
+    {
+      "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame", mode = "n",
+    }
   },
   {
     "<leader>l",
