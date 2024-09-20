@@ -10,5 +10,6 @@ return {
   "html",
   "lua_ls",
   "vimls",
-  "astro"
+  "astro",
+  "markdown_oxide"
 }
