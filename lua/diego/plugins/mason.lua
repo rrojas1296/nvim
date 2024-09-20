@@ -1,32 +1,34 @@
 return {
-  "neovim/nvim-lspconfig",
+  "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    "williamboman/mason.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp"
   },
   config = function()
     local mason = require('mason')
-    local mason_config = require('mason-lspconfig')
-    local servers = require('diego.plugins.cmp.servers')
-    mason.setup()
-    mason_config.setup {
+    local masonlspconfig = require('mason-lspconfig')
+    local lspconfig = require('lspconfig')
+    local servers = require('diego.config.servers')
+    local cmp_nvim_lsp = require('cmp_nvim_lsp')
+    mason.setup({
       ui = {
         icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗"
+          package_installed = "",
+          package_uninstalled = "",
+          package_pending = "",
         }
-      },
-      ensure_installed = servers,
-      automatic_installation = true,
-    }
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-    for _, server in pairs(servers) do
-      require('lspconfig')[server].setup {
-        capabilities = capabilities,
       }
+    })
+    masonlspconfig.setup({
+      ensure_installed = servers
+    })
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    for _, server_name in pairs(servers) do
+      lspconfig[server_name].setup({
+        capabilities = capabilities,
+      })
     end
   end
 }

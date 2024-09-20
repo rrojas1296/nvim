@@ -1,27 +1,30 @@
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
-    "onsails/lspkind.nvim",
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-    'neovim/nvim-lspconfig',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
     "windwp/nvim-autopairs",
-    "rafamadriz/friendly-snippets",
-    "mlaursen/vim-react-snippets",
+    "onsails/lspkind.nvim",
   },
-  event = "VeryLazy",
   config = function()
     local cmp = require('cmp')
+
     local lspkind = require('lspkind')
-    require("luasnip/loaders/from_vscode").lazy_load()
+
     local autopairs = require('nvim-autopairs')
-    local servers = require('diego.plugins.cmp.servers')
-    local on_attach = function(_, bufnr)
-      vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    local signs = {
+      Error = "",
+      Warning = "",
+      Hint = "󰈸",
+      Info = "",
+    }
+
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
     autopairs.setup()
@@ -55,35 +58,10 @@ return {
       },
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' },
         { name = 'path' },
       }, {
         { name = 'buffer' },
       }),
-      confirm_opts = {
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
-      },
-      experimental = {
-        ghost_text = false,
-        native_menu = false,
-      },
     })
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-    for _, server in pairs(servers) do
-      require('lspconfig')[server].setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = {
-          ["textDocument/publishDiagnostics"] = vim.lsp.with(
-            vim.lsp.diagnostic.on_publish_diagnostics, {
-              -- Disable virtual_text
-              virtual_text = true
-            }
-          ),
-        }
-      }
-    end
   end
 }
