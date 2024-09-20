@@ -15,7 +15,7 @@
     </p>
 </div>
 
-# **OASIS** neovim configuration
+# Devup2332 neovim configuration
 
 This is my personal configuration for Neovim from 2024
 
