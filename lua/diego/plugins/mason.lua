@@ -17,22 +17,7 @@ return {
           package_uninstalled = "✗"
         }
       },
-      ensure_installed = {
-        'ts_ls',
-        'tailwindcss',
-        'pyright',
-        'eslint',
-        'graphql',
-        'lua_ls',
-        'cssls',
-        "emmet_ls",
-        "html",
-        "lua_ls",
-        "vimls",
-        "docker_compose_language_service",
-        "dockerls",
-        "astro"
-      },
+      ensure_installed = servers,
       automatic_installation = true,
     }
     local capabilities = vim.lsp.protocol.make_client_capabilities()

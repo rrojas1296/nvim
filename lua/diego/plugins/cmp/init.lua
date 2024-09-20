@@ -1,13 +1,12 @@
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
+    "onsails/lspkind.nvim",
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'neovim/nvim-lspconfig',
-    -- 'quangnguyen30192/cmp-nvim-ultisnips',
-    -- 'SirVer/ultisnips',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     "windwp/nvim-autopairs",
@@ -17,83 +16,46 @@ return {
   event = "VeryLazy",
   config = function()
     local cmp = require('cmp')
-    local icons = require('diego.plugins.cmp.icons')
-    local luasnip = require('luasnip')
+    local lspkind = require('lspkind')
     require("luasnip/loaders/from_vscode").lazy_load()
     local autopairs = require('nvim-autopairs')
-    local reactSnipets = require("vim-react-snippets").lazy_load()
     local servers = require('diego.plugins.cmp.servers')
     local on_attach = function(_, bufnr)
-      -- Enable completion triggered by <c-x><c-o>
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     end
 
     autopairs.setup()
 
     cmp.setup({
-      snippet = {
-        expand = function(args)
-          luasnip.lsp_expand(args.body) -- For `luasnip` users.
-          -- vim.fn["UltiSnips#Anon"](args.body)
-        end,
-      },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ["<C-e>"] = cmp.mapping {
-          i = cmp.mapping.abort(),
-          c = cmp.mapping.close(),
-        },
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-            return
-          elseif luasnip.expandable() then
-            luasnip.expand()
-            return
-          end
-          fallback()
-        end, {
-          "i",
-          "s",
-        }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = cmp.mapping.select_next_item()
       }),
       formatting = {
         fields = { "kind", "abbr", "menu" },
         expandable_indicator = true,
-        format = function(_, vim_item)
-          if icons[vim_item.kind] then
-            print(vim_item.kind)
-            vim_item.kind = string.format("%s", icons[vim_item.kind]) .. "  " .. vim_item.kind
-          end
-          return vim_item
-        end,
+        format = lspkind.cmp_format({
+          mode = "symbol_text",
+          menu = ({
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            luasnip = "[LuaSnip]",
+            nvim_lua = "[Lua]",
+            latex_symbols = "[Latex]",
+          })
+        }),
       },
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        { name = 'luasnip' },
         { name = 'path' },
       }, {
         { name = 'buffer' },
