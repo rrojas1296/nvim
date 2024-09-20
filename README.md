@@ -23,7 +23,7 @@ This is my personal configuration for Neovim from 2024
     <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726808646/Screenshot_20240919_233551_nudloo.png" width="700px"/>
 </p>
 
-## Installation
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/devup2332/nvim ~/.config/nvim
@@ -37,7 +37,7 @@ cd ~/.config/nvim
 cd nvim
 ```
 
-## Requirements
+## ⚡️ Requirements
 
 - Neovim >= 0.5.0
 - Node.js >= 12.12.0
