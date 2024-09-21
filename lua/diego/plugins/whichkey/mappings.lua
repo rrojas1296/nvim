@@ -11,6 +11,7 @@ return {
   {
     "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n",
   },
+
   {
     "<leader>v",
     group = "Slip",
@@ -27,7 +28,7 @@ return {
     "<leader>c", "<cmd>bdelete<cr>", desc = "Close Buffer", mode = "n",
   },
   {
-    "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer", mode = "n",
+    "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n",
   },
   {
     "<leader>q", "<cmd>q!<cr>", desc = "Quit", mode = "n",
