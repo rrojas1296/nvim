@@ -1,13 +1,11 @@
 return {
-  "uloco/bluloco.nvim",
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
-  dependencies = { 'rktjmp/lush.nvim' },
   config = function()
-    local theme = require('bluloco')
+    local theme = require('tokyonight')
     local colorscheme = vim.cmd.colorscheme
     theme.setup()
-    colorscheme "bluloco"
+    colorscheme "tokyonight-night"
   end
-
 }
