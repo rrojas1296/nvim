@@ -30,7 +30,7 @@ return {
           return { "", "", "", "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
         end,
         center = buttons,
-        header = logos.logo4
+        header = logos.logo1
       },
       hide = {
         statuslinne = true,

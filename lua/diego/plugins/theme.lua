@@ -1,12 +1,8 @@
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
+  "luisiacc/gruvbox-baby",
   config = function()
     local colorscheme = vim.cmd.colorscheme
-    local tokyonight = require('tokyonight')
-
-    tokyonight.setup()
-    colorscheme "tokyonight-night"
+    colorscheme "gruvbox-baby"
   end
 
 }
