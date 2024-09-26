@@ -1,8 +1,13 @@
 return {
-  "luisiacc/gruvbox-baby",
+  "uloco/bluloco.nvim",
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
   config = function()
+    local theme = require('bluloco')
     local colorscheme = vim.cmd.colorscheme
-    colorscheme "gruvbox-baby"
+    theme.setup()
+    colorscheme "bluloco"
   end
 
 }
