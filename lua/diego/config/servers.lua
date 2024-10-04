@@ -11,5 +11,7 @@ return {
   "lua_ls",
   "vimls",
   "astro",
-  "markdown_oxide"
+  "markdown_oxide",
+  "rust_analyzer",
+  "gopls"
 }

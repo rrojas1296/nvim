@@ -33,7 +33,8 @@ return {
         "vimdoc",
         "yaml",
         "sql",
-        "graphql"
+        "graphql",
+        "go"
       },
       highlight = {
         enable = true,
