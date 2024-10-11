@@ -20,7 +20,7 @@
 This is my personal configuration for Neovim for 2024
 
 <p align="center" gap="20px">
-    <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1726808646/Screenshot_20240919_233551_nudloo.png" width="700px"/>
+    <img src="https://res.cloudinary.com/dder8kjda/image/upload/v1728621862/Screenshot_2024-10-10_23-43-44_yfxwr2.png" width="700px"/>
 </p>
 
 ## 🚀 Installation
