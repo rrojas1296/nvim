@@ -78,7 +78,8 @@ return {
       "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
     },
     {
-      "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format", mode = "n",
+      "<leader>lf", "<cmd>lua require('conform').format({lsp_fallback = true,async = false, timeout = 1000,})<cr>", desc =
+    "Format", mode = "n",
     }
   },
   {
