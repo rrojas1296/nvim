@@ -28,7 +28,7 @@ return {
     "<leader>c", "<cmd>bdelete<cr>", desc = "Close Buffer", mode = "n",
   },
   {
-    "<leader>bc", "<cmd>%bd|e#<cr>", desc = "Close Buffer except current", mode = "n",
+    "<leader>bc", "<cmd>w|%bd|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
   },
   {
     "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n",
@@ -77,10 +77,6 @@ return {
     {
       "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
     },
-    {
-      "<leader>lf", "<cmd>lua require('conform').format({lsp_fallback = true,async = false, timeout = 1000,})<cr>", desc =
-    "Format", mode = "n",
-    }
   },
   {
     "<leader>t",
