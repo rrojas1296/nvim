@@ -28,7 +28,7 @@ return {
     "<leader>c", "<cmd>bdelete<cr>", desc = "Close Buffer", mode = "n",
   },
   {
-    "<leader>bc", "<cmd>w|%bd|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
+    "<leader>bc", "<cmd>w|%bd!|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
   },
   {
     "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n",
