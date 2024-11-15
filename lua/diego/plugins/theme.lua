@@ -1,11 +1,11 @@
 return {
-  'Mofiqul/vscode.nvim',
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    local theme = require('vscode')
+    local theme = require('tokyonight')
     local colorscheme = vim.cmd.colorscheme
     theme.setup()
-    colorscheme "vscode"
+    colorscheme "tokyonight-night"
   end
 }
