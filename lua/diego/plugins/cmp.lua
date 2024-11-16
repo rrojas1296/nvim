@@ -19,10 +19,9 @@ return {
     'dcampos/cmp-snippy',
 
     "mlaursen/vim-react-snippets",
+
+    "rafamadriz/friendly-snippets"
   },
-  opts = function()
-    -- require("vim-react-snippets").lazy_load()
-  end,
   config = function()
     local cmp = require('cmp')
 
@@ -104,6 +103,7 @@ return {
             latex_symbols = "[LaTeX]",
             ultisnips = "[Ultisnips]",
             nvim_lsp = "[LSP]",
+            friendly_snippets = "[Friendly]",
           })[entry.source.name]
           return vim_item
         end

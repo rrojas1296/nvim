@@ -29,16 +29,6 @@ return {
   config = function()
 
     local neo_tree = require("neo-tree")
-    -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-    vim.fn.sign_define("DiagnosticSignError",
-      { text = " ", texthl = "DiagnosticSignError" })
-    vim.fn.sign_define("DiagnosticSignWarn",
-      { text = " ", texthl = "DiagnosticSignWarn" })
-    vim.fn.sign_define("DiagnosticSignInfo",
-      { text = " ", texthl = "DiagnosticSignInfo" })
-    vim.fn.sign_define("DiagnosticSignHint",
-      { text = "󰌵", texthl = "DiagnosticSignHint" })
-
 
     neo_tree.setup({
       close_if_last_window = false,   -- Close Neo-tree if it is the last window left in the tab
@@ -144,7 +134,7 @@ return {
       commands = {},
       window = {
         position = "left",
-        width = 40,
+        width = 50,
         mapping_options = {
           noremap = true,
           nowait = true,
@@ -181,6 +171,7 @@ return {
             }
           },
           ["A"] = "add_directory",   -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
+          ["I"] = "toggle_hidden",   -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
           ["d"] = "delete",
           ["r"] = "rename",
           ["y"] = "copy_to_clipboard",
@@ -207,8 +198,8 @@ return {
         filtered_items = {
           visible = false,   -- when true, they will just be displayed differently than normal items
           hide_dotfiles = true,
-          hide_gitignored = true,
-          hide_hidden = true,   -- only works on Windows for hidden files/directories
+          hide_gitignored = false,
+          hide_hidden = false,   -- only works on Windows for hidden files/directories
           hide_by_name = {
             --"node_modules"
           },
