@@ -31,7 +31,7 @@ return {
     "<leader>bc", "<cmd>w|%bd!|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
   },
   {
-    "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n",
+    "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer", mode = "n",
   },
   {
     "<leader>q", "<cmd>q!<cr>", desc = "Quit", mode = "n",
