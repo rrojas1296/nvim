@@ -10,10 +10,6 @@ return {
   },
   config = function()
     local noice = require('noice')
-    noice.setup({
-      messages = {
-        enabled = false
-      }
-    })
+    noice.setup()
   end
 }
