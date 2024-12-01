@@ -18,8 +18,6 @@ return {
     'dcampos/nvim-snippy',
     'dcampos/cmp-snippy',
 
-    "mlaursen/vim-react-snippets",
-
     "rafamadriz/friendly-snippets"
   },
   config = function()
