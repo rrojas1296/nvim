@@ -25,6 +25,12 @@ return {
         }
       }
     )
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      callback = function(args)
+        conform.format({ bufnr = args.buf })
+      end,
+    })
     vim.keymap.set({ "n", "v" }, "<leader>lf", function()
       conform.format({
         lsp_fallback = true,

@@ -4,6 +4,12 @@ return {
   config = function()
     local telescope = require('telescope')
     telescope.setup({
+      pickers = {
+        find_files = {
+          theme = "dropdown",
+          previewer = false
+        },
+      },
       extensions = {
         file_browser = {
           theme = "dropdown",
