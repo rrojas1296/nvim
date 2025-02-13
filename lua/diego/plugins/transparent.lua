@@ -15,8 +15,8 @@ return {
             "BufferLineBackground",
             "BufferLineSeparator",
             "BufferLineIndicatorSelected",
-            "NvimTreeNormal",
-            "NvimTreeNormalNC"
+            "NeoTreeNormal",
+            "NeoTreeNormalNC"
           },
         })
   end
