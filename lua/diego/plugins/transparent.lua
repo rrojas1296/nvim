@@ -16,7 +16,9 @@ return {
             "BufferLineSeparator",
             "BufferLineIndicatorSelected",
             "NeoTreeNormal",
-            "NeoTreeNormalNC"
+            "NeoTreeNormalNC",
+            "Telescope",
+            "all"
           },
         })
   end
