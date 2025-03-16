@@ -13,5 +13,6 @@ return {
   "astro",
   "markdown_oxide",
   "rust_analyzer",
-  "gopls"
+  "gopls",
+  "biome"
 }

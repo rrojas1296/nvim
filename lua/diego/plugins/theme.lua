@@ -1,11 +1,11 @@
 return {
-  "olimorris/onedarkpro.nvim",
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    local theme = require('onedarkpro')
+    local theme = require('tokyonight')
     local colorscheme = vim.cmd.colorscheme
     theme.setup()
-    colorscheme "onedark"
+    colorscheme "tokyonight-night"
   end
 }
