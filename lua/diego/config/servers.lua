@@ -11,7 +11,6 @@ return {
   "lua_ls",
   "vimls",
   "astro",
-  "markdown_oxide",
   "rust_analyzer",
   "gopls",
   "biome"
