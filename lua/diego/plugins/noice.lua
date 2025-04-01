@@ -10,6 +10,10 @@ return {
       messages = {
         enabled = false
       },
+      notify = {
+        enabled = false,
+        view = "notify",
+      },
     })
   end
 }

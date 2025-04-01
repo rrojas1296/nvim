@@ -34,7 +34,8 @@ return {
         "yaml",
         "sql",
         "graphql",
-        "go"
+        "go",
+        "prisma"
       },
       highlight = {
         enable = true,
