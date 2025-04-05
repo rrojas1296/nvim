@@ -5,9 +5,9 @@ return {
     local telescope = require('telescope')
     telescope.setup({
       pickers = {
-        find_files = {
+        lsp_references = {
           theme = "dropdown",
-          previewer = false
+          previewer = true 
         },
       },
       extensions = {

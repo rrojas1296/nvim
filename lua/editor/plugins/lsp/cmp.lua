@@ -18,24 +18,19 @@ return {
     'dcampos/nvim-snippy',
     'dcampos/cmp-snippy',
 
-    "rafamadriz/friendly-snippets"
+    "rafamadriz/friendly-snippets",
+    "neovim/nvim-lspconfig",
+
   },
   config = function()
     local cmp = require('cmp')
 
-    local signs = {
-      Error = "",
-      Warn = "",
-      Hint = "󰈸",
-      Info = "",
-    }
+    -- LSP Servers
+    local servers = require('editor.config.servers')
+    local lspconfig = require('lspconfig')
+    local cmp_lsp = require('cmp_nvim_lsp')
 
-    vim.deprecate = function() end
-
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.diagnostic.config ({ signs = true, underline = true, update_in_insert = false, virtual_text = true, severity_sort = true })
-    end
+    local capabilities = cmp_lsp.default_capabilities()
 
     local kind_icons = {
       Text = "",
@@ -70,11 +65,35 @@ return {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-          -- require('luasnip').lsp_expand(args.body)    -- For `luasnip` users.
+          -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
           -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-          -- vim.fn["UltiSnips#Anon"](args.body)         -- For `ultisnips` users.
+          -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
           -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+
+          -- For `mini.snippets` users:
+          -- local insert = MiniSnippets.config.expand.insert or MiniSnippets.default_insert
+          -- insert({ body = args.body }) -- Insert at cursor
+          -- cmp.resubscribe({ "TextChangedI", "TextChangedP" })
+          -- require("cmp.config").set_onetime({ sources = {} })
         end,
+      },
+      formatting = {
+        fields = { "kind", "abbr", "menu" },
+        expandable_indicator = false,
+        format = function(entry, vim_item)
+          -- Kind icons
+          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+          -- Source
+          vim_item.menu = ({
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            luasnip = "[LuaSnip]",
+            nvim_lua = "[Lua]",
+            latex_symbols = "[LaTeX]",
+            vsnip = "[VSnip]",
+          })[entry.source.name]
+          return vim_item
+        end
       },
       window = {
         completion = cmp.config.window.bordered(),
@@ -85,39 +104,23 @@ return {
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<Tab>'] = cmp.mapping.select_next_item()
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
-      formatting = {
-        fields = { "kind", "abbr", "menu" },
-        expandable_indicator = true,
-        format = function(entry, vim_item)
-          -- Kind icons
-          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-          -- Source
-          vim_item.menu = ({
-            buffer = "[Buffer]",
-            path = "[Path]",
-            luasnip = "[LuaSnip]",
-            nvim_lua = "[Lua]",
-            latex_symbols = "[LaTeX]",
-            ultisnips = "[Ultisnips]",
-            nvim_lsp = "[LSP]",
-            vsnip = "[Vsnip]",
-          })[entry.source.name]
-          return vim_item
-        end
-      },
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-        { name = 'path' },
-        -- { name = 'luasnip' },   -- For luasnip users.
+        { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' },
+        -- { name = 'snippy' }, -- For snippy users.
       }, {
         { name = 'buffer' },
-      }),
+      })
     })
+
+    for _, server_name in pairs(servers) do
+      lspconfig[server_name].setup({
+        capabilities = capabilities,
+      })
+    end
   end
 }

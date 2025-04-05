@@ -1,6 +1,6 @@
 -- Settings
-require("diego.config")
+require("editor.config")
 
 --Lazy 
-require("diego.lazy")
+require("editor.lazy")
 

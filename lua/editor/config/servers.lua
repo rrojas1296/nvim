@@ -13,6 +13,5 @@ return {
   "astro",
   "rust_analyzer",
   "gopls",
-  "biome",
   "prismals"
 }

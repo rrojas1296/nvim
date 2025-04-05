@@ -3,10 +3,10 @@ return {
     "<leader>a", "<cmd>Dashboard<cr>", desc = "Dashboard", mode = "n",
   },
   {
-    "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
+    "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
   },
   {
-    "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
+    "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
   },
   {
     "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n",
@@ -72,10 +72,10 @@ return {
     "<leader>l",
     group = "LSP",
     {
-      "<leader>ls", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "See Diagnostics", mode = "n",
+      "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
     },
     {
-      "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
+      "<leader>ls", "<cmd>Lspsaga show_line_diagnostics<cr>", desc = "Show diagnostics", mode = "n",
     },
   },
   {

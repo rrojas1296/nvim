@@ -13,19 +13,11 @@ return {
       background_colour = '#000000',
       max_width = 48,
       stages = "slide",
-      render = "compact",
+      merge_duplicates = true,
     })
 
     noice.setup({
-      messages = {
-        enabled = false
-      },
       lsp = {
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
         hover = {
           enabled = false,
         }

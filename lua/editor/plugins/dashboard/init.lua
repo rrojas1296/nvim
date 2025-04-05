@@ -1,4 +1,4 @@
-local logos = require('diego.plugins.dashboard.logos')
+local logos = require('editor.plugins.dashboard.logos')
 local buttons = {
 
   { action = "Telescope find_files", desc = " Find file", icon = " ", key = "f" },
