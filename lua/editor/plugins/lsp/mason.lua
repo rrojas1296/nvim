@@ -10,9 +10,8 @@ return {
     -- Setting Mappings
     local keymap = vim.api.nvim_set_keymap
 
-    keymap('n', "gr", "<cmd>Telescope lsp_references<cr>", { noremap = true, silent = true })
+    -- keymap('n', "gr", "<cmd>Telescope lsp_references<cr>", { noremap = true, silent = true })
     keymap('n', "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
-    keymap('n', "K", "<cmd> lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
 
 
     -- Mason and LSP Setup
