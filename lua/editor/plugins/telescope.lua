@@ -5,10 +5,18 @@ return {
     local telescope = require('telescope')
     telescope.setup({
       pickers = {
+        find_files = {
+          theme = "dropdown",
+          previewer = false,
+        },
         lsp_references = {
           theme = "dropdown",
-          previewer = true 
+          previewer = true
         },
+        lsp_definitions = {
+          theme = "dropdown",
+          selection_strategy = "closest",
+        }
       },
       extensions = {
         file_browser = {

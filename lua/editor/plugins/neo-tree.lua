@@ -1,7 +1,11 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   config = function()
-    local neo_tree = require("neo-tree")
+    local status_ok, neo_tree = pcall(require, "neo-tree")
+
+    if not status_ok then
+      return
+    end
 
     neo_tree.setup({
       window = {

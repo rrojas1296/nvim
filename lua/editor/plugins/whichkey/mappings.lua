@@ -3,10 +3,9 @@ return {
     "<leader>a", "<cmd>Dashboard<cr>", desc = "Dashboard", mode = "n",
   },
   {
-    "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
+    "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
   },
-  {
-    "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
+  { "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
   },
   {
     "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n",
