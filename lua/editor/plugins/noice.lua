@@ -6,29 +6,23 @@ return {
     "rcarriga/nvim-notify",
   },
   config = function()
-    local noice = require("noice")
-    local notify = require('notify')
+    local status_ok, noice = pcall(require, "noice")
 
-    notify.setup({
-      background_colour = '#000000',
-      max_width = 48,
-      stages = "slide",
-      merge_duplicates = true,
-      render = "compact",
-    })
+    if not status_ok then
+      return
+    end
 
     noice.setup({
-      lsp = {
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "written",
+          },
+          opts = { skip = true },
         },
-        hover = {
-          enabled = false,
-          silent = true
-        }
-      }
+      },
     })
   end
 }
