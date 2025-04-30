@@ -22,6 +22,9 @@ return {
     })
 
     noice.setup({
+      presets = {
+        bottom_search = true,
+      },
       routes = {
         {
           filter = {

@@ -37,6 +37,16 @@ return {
         "go",
         "prisma"
       },
+      auto_install = true,
+      sync_install = false,
+      ignore_install = { "phpdoc" },
+      modules = {
+        "norg",
+        "norg_meta",
+        "norg_table",
+        "norg_todo",
+        "norg_context",
+      },
       highlight = {
         enable = true,
       },
