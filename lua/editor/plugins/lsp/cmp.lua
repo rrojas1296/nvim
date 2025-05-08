@@ -87,6 +87,7 @@ return {
           vim_item.menu = ({
             buffer = "[Buffer]",
             nvim_lsp = "[LSP]",
+            path = "[Path]",
             luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",
             latex_symbols = "[LaTeX]",
@@ -113,7 +114,9 @@ return {
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
       }, {
+        { name = 'path' },
         { name = 'buffer' },
+        { name = "cmdline" }
       })
     })
 
