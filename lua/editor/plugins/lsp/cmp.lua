@@ -15,20 +15,20 @@ return {
     'stevearc/vim-vscode-snippets',
 
     -- For luasnip users.
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    -- 'L3MON4D3/LuaSnip',
+    -- 'saadparwaiz1/cmp_luasnip',
 
     -- For mini.snippets users.
-    'echasnovski/mini.snippets',
-    'abeldekat/cmp-mini-snippets',
+    -- 'echasnovski/mini.snippets',
+    -- 'abeldekat/cmp-mini-snippets',
 
     -- For ultisnips users.
-    'SirVer/ultisnips',
-    'quangnguyen30192/cmp-nvim-ultisnips',
+    -- 'SirVer/ultisnips',
+    -- 'quangnguyen30192/cmp-nvim-ultisnips',
 
     -- For snippy users.
-    'dcampos/nvim-snippy',
-    'dcampos/cmp-snippy',
+    -- 'dcampos/nvim-snippy',
+    -- 'dcampos/cmp-snippy',
 
 
   },
