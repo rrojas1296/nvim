@@ -1,25 +1,35 @@
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
+    'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
 
-    "windwp/nvim-autopairs",
-    "onsails/lspkind.nvim",
+    -- For vsnip users.
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip-integ',
+    'hrsh7th/vim-vsnip',
 
+    -- Vim vscode snippets (This works with vsnip and other snippet engines)
+    'stevearc/vim-vscode-snippets',
+
+    -- For luasnip users.
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
+    -- For mini.snippets users.
+    'echasnovski/mini.snippets',
+    'abeldekat/cmp-mini-snippets',
 
+    -- For ultisnips users.
+    'SirVer/ultisnips',
+    'quangnguyen30192/cmp-nvim-ultisnips',
+
+    -- For snippy users.
     'dcampos/nvim-snippy',
     'dcampos/cmp-snippy',
 
-    "rafamadriz/friendly-snippets",
-    "neovim/nvim-lspconfig",
 
   },
   config = function()
@@ -109,7 +119,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
+        { name = 'vsnip' },     -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
