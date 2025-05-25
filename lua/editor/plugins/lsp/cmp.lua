@@ -119,7 +119,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' },     -- For vsnip users.
+        { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
@@ -131,9 +131,20 @@ return {
     })
 
     for _, server_name in pairs(servers) do
-      lspconfig[server_name].setup({
-        capabilities = capabilities,
-      })
+      if server_name == 'tailwindcss' then
+        lspconfig.tailwindcss.setup({
+          capabilities = capabilities,
+          settings = {
+            tailwindCSS = {
+              classFunctions = { "cva", "cx" },
+            },
+          },
+        })
+      else
+        lspconfig[server_name].setup({
+          capabilities = capabilities,
+        })
+      end
     end
   end
 }
