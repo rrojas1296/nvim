@@ -78,6 +78,22 @@ return {
     },
   },
   {
+    "<leader>o",
+    group = "Flutter",
+    {
+      "<leader>or", "<cmd>FlutterRun<cr>", desc = "Run", mode = "n",
+    },
+    {
+      "<leader>ot", "<cmd>FlutterLogToggle<cr>", desc = "Toggle Logs", mode = "n"
+    },
+    {
+      "<leader>of", "<cmd>Telescope flutter commands<cr>", desc = "Flutter Commands", mode = "n",
+    },
+    {
+      "<leader>oe", "<cmd>FlutterEmulators<cr>", desc = "Flutter Emulators", mode = "n",
+    }
+  },
+  {
     "<leader>t",
     group = "Terminal",
     {

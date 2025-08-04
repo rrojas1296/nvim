@@ -6,17 +6,14 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
 
-    -- For vsnip users.
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip-integ',
-    'hrsh7th/vim-vsnip',
 
     -- Vim vscode snippets (This works with vsnip and other snippet engines)
-    'stevearc/vim-vscode-snippets',
+    -- 'stevearc/vim-vscode-snippets',
 
     -- For luasnip users.
-    -- 'L3MON4D3/LuaSnip',
-    -- 'saadparwaiz1/cmp_luasnip',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    "rafamadriz/friendly-snippets"
 
     -- For mini.snippets users.
     -- 'echasnovski/mini.snippets',
@@ -37,8 +34,25 @@ return {
 
     -- LSP Servers
     local servers = require('editor.config.servers')
+    local snippets = require('luasnip.loaders.from_lua')
     local lspconfig = require('lspconfig')
     local cmp_lsp = require('cmp_nvim_lsp')
+    local vscode_snippets = require("luasnip.loaders.from_vscode")
+    local ls = require("luasnip")
+
+    -- Cambia la tecla de expansión/salto hacia adelante
+    vim.keymap.set({ "i", "s" }, "<C-j>", function()
+      if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+      end
+    end, { silent = true })
+
+    -- Salto hacia atrás en el snippet
+    vim.keymap.set({ "i", "s" }, "<C-k>", function()
+      if ls.jumpable(-1) then
+        ls.jump(-1)
+      end
+    end, { silent = true })
 
     local capabilities = cmp_lsp.default_capabilities()
 
@@ -70,12 +84,15 @@ return {
       TypeParameter = "󰅲",
     }
 
+    snippets.lazy_load({ paths = { "~/.config/nvim/lua/editor/snippets" } })
+    vscode_snippets.lazy_load()
+
     cmp.setup({
       snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-          -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+          -- vim.fn["vsnip#anonymous"](args.body)     -- For `vsnip` users.
+          ls.lsp_expand(args.body) -- For `luasnip` users.
           -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
           -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
           -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
@@ -119,8 +136,8 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'vsnip' },   -- For vsnip users.
+        { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
       }, {

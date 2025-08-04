@@ -23,6 +23,7 @@ return {
           python = { "autopep8", stop_after_first = true },
           graphql = { "prettier", "prettier", stop_after_first = true },
           astro = { "prettier", "prettier", stop_after_first = true },
+          dart = { "dart_format", stop_after_first = true },
         }
       }
     )

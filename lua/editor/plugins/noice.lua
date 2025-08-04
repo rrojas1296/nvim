@@ -9,6 +9,11 @@ return {
     local status_ok_2, noice = pcall(require, "noice")
     local status_ok_1, notify = pcall(require, "notify")
 
+    require("notify").setup({
+      background_colour = "#000000",
+    })
+
+
     if not status_ok_1 then
       return
     end
