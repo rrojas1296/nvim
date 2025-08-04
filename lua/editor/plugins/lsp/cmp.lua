@@ -119,6 +119,7 @@ return {
             nvim_lua = "[Lua]",
             latex_symbols = "[LaTeX]",
             vsnip = "[VSnip]",
+            codeium = "[Codeium]",
           })[entry.source.name]
           return vim_item
         end
@@ -136,6 +137,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'codeium' },
         -- { name = 'vsnip' },   -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
