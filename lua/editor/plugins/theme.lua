@@ -1,11 +1,12 @@
 return {
-  'folke/tokyonight.nvim',
+  'marko-cerovac/material.nvim',
   lazy = false,
   priority = 1000,
   config = function()
-    local theme = require('tokyonight')
+    local theme = require('material')
     local colorscheme = vim.cmd.colorscheme
     theme.setup()
-    colorscheme 'tokyonight-night'
+    vim.g.material_style = "deep ocean"
+    colorscheme 'material'
   end
 }
