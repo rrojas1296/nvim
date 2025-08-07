@@ -41,5 +41,22 @@ return {
     i(1, "ComponentName"),
     rep(1),
     rep(1),
+  })),
+  s('rnft', fmt([[
+    import {{ Text, View }} from "react-native";
+
+    const {} = () => {{
+      return (
+        <View className="flex-1 bg-white justify-center items-center">
+          <Text>{}</Text>
+        </View>
+      );
+    }};
+
+    export default {};
+    ]], {
+    i(1, "ComponentName"),
+    rep(1),
+    rep(1)
   }))
 }
