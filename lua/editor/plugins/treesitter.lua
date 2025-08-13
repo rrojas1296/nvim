@@ -48,7 +48,7 @@ return {
         "norg_context",
       },
       highlight = {
-        enable = false,
+        enable = true,
       },
     }
   end
