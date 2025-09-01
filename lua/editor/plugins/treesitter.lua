@@ -35,7 +35,8 @@ return {
         "sql",
         "graphql",
         "go",
-        "prisma"
+        "prisma",
+        "dockerfile"
       },
       auto_install = true,
       sync_install = false,
