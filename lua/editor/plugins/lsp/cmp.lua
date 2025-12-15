@@ -145,13 +145,27 @@ return {
       }, {
         { name = 'path' },
         { name = 'buffer' },
-        { name = "cmdline" }
       })
+    })
+
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
+
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "path" },
+        { name = "cmdline" },
+      },
     })
 
     for _, server_name in pairs(servers) do
       if server_name == 'tailwindcss' then
-        lspconfig.tailwindcss.setup({
+        vim.lsp.config(server_name, {
           capabilities = capabilities,
           settings = {
             tailwindCSS = {
@@ -160,7 +174,7 @@ return {
           },
         })
       else
-        lspconfig[server_name].setup({
+        vim.lsp.config(server_name, {
           capabilities = capabilities,
         })
       end

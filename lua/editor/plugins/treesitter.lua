@@ -1,56 +1,40 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  run = function()
-    local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-    ts_update()
-  end,
+  lazy = false,
+  build = ':TSUpdate',
   config = function()
-    local treesitter = require "nvim-treesitter.configs"
-
-    treesitter.setup {
-      ensure_installed = {
-        "bash",
-        "c",
-        "astro",
-        "diff",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-        "sql",
-        "graphql",
-        "go",
-        "prisma",
-        "dockerfile"
-      },
-      auto_install = true,
-      sync_install = false,
-      ignore_install = { "phpdoc" },
-      modules = {
-        "norg",
-        "norg_meta",
-        "norg_table",
-        "norg_todo",
-        "norg_context",
-      },
-      highlight = {
-        enable = true,
-      },
+    local ts = require('nvim-treesitter')
+    ts.install {
+      "javascript",
+      "typescript",
+      "tsx",
+      "html",
+      "css",
+      "json",
+      "jsonc",
+      "astro",
+      "python",
+      "sql",
+      "dockerfile",
+      "yaml",
+      "toml",
+      "bash",
+      "markdown",
+      "markdown_inline",
+      "regex",
+      "vim",
+      "vimdoc",
+      "query",
     }
+
+    vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+      callback = function(args)
+        if vim.bo[args.buf].buftype ~= "" then
+          return
+        end
+
+        pcall(vim.treesitter.start, args.buf)
+      end,
+    })
   end
 }
