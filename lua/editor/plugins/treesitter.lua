@@ -8,6 +8,7 @@ return {
       "javascript",
       "typescript",
       "tsx",
+      "prisma",
       "html",
       "css",
       "json",
