@@ -13,6 +13,11 @@ return {
           ["l"] = "open",
           ["I"] = "toggle_hidden",
         }
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true
+        }
       }
     })
   end,

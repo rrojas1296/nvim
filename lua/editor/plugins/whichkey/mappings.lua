@@ -1,20 +1,30 @@
 return {
   {
-    "<leader>a", "<cmd>Dashboard<cr>", desc = "Dashboard", mode = "n",
+    "<leader>a", "<cmd>Dashboard<cr>", desc = "Dashboard", mode = "n", icon = "󰕮"
   },
   {
     "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files", mode = "n",
   },
-  { "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
+  {
+    "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text", mode = "n",
   },
   {
-    "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n",
+    "<leader>w", "<cmd>w<cr>", desc = "Save", mode = "n", icon = ""
   },
-
+  {
+    "<leader>r",
+    group = "Renamer",
+    {
+      "<leader>rn", "<cmd>GrugFar<cr>", desc = "Rename multiple files", mode = "n"
+    },
+    {
+      "<leader>rw", "<cmd>GrugFarWithin<cr>", desc = "Rename in current file", mode = "n"
+    }
+  },
   {
     "<leader>v",
-    group = "Slip",
-
+    group = "Split",
+    icon = "",
     {
       "<leader>vs", "<cmd>vsp<cr>", desc = "Split", mode = "n",
     },
@@ -27,10 +37,15 @@ return {
     "<leader>c", "<cmd>bdelete<cr>", desc = "Close Buffer", mode = "n",
   },
   {
-    "<leader>bc", "<cmd>w|%bd!|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
+    "<leader>b",
+    group = "Buffer",
+    {
+      "<leader>bc", "<cmd>w|%bd!|e#|bd#<cr>", desc = "Close Buffer except current", mode = "n",
+    }
+
   },
   {
-    "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer", mode = "n",
+    "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer", mode = "n", icon = ""
   },
   {
     "<leader>q", "<cmd>q!<cr>", desc = "Quit", mode = "n",
@@ -70,6 +85,7 @@ return {
   {
     "<leader>l",
     group = "LSP",
+    icon = "󰛦",
     {
       "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n",
     },
@@ -80,6 +96,7 @@ return {
   {
     "<leader>o",
     group = "Flutter",
+    icon = "",
     {
       "<leader>or", "<cmd>FlutterRun<cr>", desc = "Run", mode = "n",
     },
@@ -96,21 +113,6 @@ return {
   {
     "<leader>t",
     group = "Terminal",
-    {
-      "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node", mode = "n",
-    },
-    {
-      "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<cr>", desc = "NCDU", mode = "n",
-    },
-    {
-      "<leader>tt", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "Htop", mode = "n",
-    },
-    {
-      "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", desc = "Python", mode = "n",
-    },
-    {
-      "<leader>tg", "<cmd>lua _GIT_BASH_TOGGLE()<cr>", desc = "Git Bash", mode = "n",
-    },
     {
       "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float", mode = "n",
     },

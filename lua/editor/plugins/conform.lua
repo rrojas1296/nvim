@@ -39,6 +39,8 @@ return {
         async = false,
         timeout = 1000,
       })
-    end)
+    end, {
+      desc = "Format Document",
+    })
   end
 }
