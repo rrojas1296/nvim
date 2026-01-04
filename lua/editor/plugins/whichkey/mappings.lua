@@ -79,7 +79,7 @@ return {
       "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit", mode = "n",
     },
     {
-      "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame", mode = "n",
+      "<leader>gB", "<cmd>Gitsigns blame_line full=true<cr>", desc = "Blame line", mode = "n",
     }
   },
   {

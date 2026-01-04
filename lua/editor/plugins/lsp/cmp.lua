@@ -125,8 +125,14 @@ return {
         end
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = {
+          border = "rounded",
+          winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
+        },
       },
       mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -138,10 +144,7 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'codeium' },
-        -- { name = 'vsnip' },   -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
       }, {
         { name = 'path' },
         { name = 'buffer' },
