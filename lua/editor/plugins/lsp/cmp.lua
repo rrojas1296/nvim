@@ -35,7 +35,6 @@ return {
     -- LSP Servers
     local servers = require('editor.config.servers')
     local snippets = require('luasnip.loaders.from_lua')
-    local lspconfig = require('lspconfig')
     local cmp_lsp = require('cmp_nvim_lsp')
     local vscode_snippets = require("luasnip.loaders.from_vscode")
     local ls = require("luasnip")
@@ -164,6 +163,10 @@ return {
         { name = "path" },
         { name = "cmdline" },
       },
+    })
+
+    vim.lsp.buf.format({
+      timeout_ms = 8000
     })
 
     for _, server_name in pairs(servers) do
