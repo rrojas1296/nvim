@@ -6,6 +6,6 @@ return {
     local theme = require('tokyonight')
     local colorscheme = vim.cmd.colorscheme
     theme.setup()
-    colorscheme 'tokyonight-night'
+    colorscheme 'tokyonight-moon'
   end
 }

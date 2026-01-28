@@ -7,10 +7,9 @@ return {
     end
 
     conform.setup({
-      -- Global format-on-save config
       format_on_save = {
         timeout_ms = 8000,
-        lsp_fallback = true,
+        lsp_fallback = false,
       },
 
       formatters_by_ft = {
@@ -29,8 +28,6 @@ return {
         lua = { "stylua", stop_after_first = true },
         python = { "black", stop_after_first = true },
         dart = { "dart_format", stop_after_first = true },
-
-        -- ✅ Prisma: use CLI formatter (FAST)
         prisma = { "prisma" },
       },
     })
